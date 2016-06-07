@@ -1,3 +1,12 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+fos_user_security:
+    resource: @FOSUserBundle/Resources/config/routing/security.xml
+
+fos_user_resetting:
+    resource: @FOSUserBundle/Resources/config/routing/resetting.xml
+
+coyote_base:
+    resource: "@CoyoteBaseBundle/Resources/config/routing/user.yml"
+    prefix: /admin/user
+
+toto:
+    resource: "@TotoBundle/Resources/config/routing.yml"

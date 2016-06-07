@@ -1,0 +1,56 @@
+{% extends "CoyoteBaseBundle::layout.html.twig" %}
+
+{% block title %}Users{% endblock %}
+
+{% block body -%}
+
+<h1><span class="fa fa-users"></span> Users</h1>
+
+<div class="panel panel-default">
+	<div class="panel-heading" style="overflow:auto;"><a href="{{ path('coyote_user_new') }}" class="btn btn-primary btn-sm pull-right"><span class="fa fa-plus"></span> Add User</a></div>
+	<table class="table table-striped user">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Username</th>
+				<th>Email</th>
+				<th>Roles</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+			<tr>
+				<td width="100px">
+				    
+                    <a href="{{ path('coyote_user_show', { 'id': user.id }) }}" class="btn btn-default btn-sm"><span class="fa fa-eye"></span></a>
+                    <div class="btn-group actions-dropdown">
+                        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="fa fa-bars"></span></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ path('coyote_user_edit', {id: user.id}) }}"><span class="fa fa-pencil-square-o"></span> Edit</a></li>
+                            <li><a href="{{ path('coyote_user_reset_pass_as_super', {id: user.id}) }}"><span class="fa fa-key"></span> Reset Password</a></li>
+                            <li><a href="{{ path('coyote_user_remove_warning', {id: user.id}) }}"><span class="fa fa-trash-o"></span> Delete</a></li>
+                        </ul>
+                    </div>      
+				</td>
+				<td>{{ user.username }}</td>
+				<td>{{ user.email }}</td>
+				<td>
+					<ul class="roles">
+						{% for role in user.roles %}
+						<li>{{ role }}</li>
+						{% endfor %}
+					</ul>
+				</td>
+				<td><span class="label {{ user.enabled ? 'label-success' : 'label-danger' }}">{{ user.enabled ? 'Active' : 'Banned' }}</span></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}
+
+
+
+
+

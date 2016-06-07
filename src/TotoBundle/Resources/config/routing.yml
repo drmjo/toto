@@ -1,0 +1,3 @@
+toto_homepage:
+    path:     /
+    defaults: { _controller: TotoBundle:Default:index }

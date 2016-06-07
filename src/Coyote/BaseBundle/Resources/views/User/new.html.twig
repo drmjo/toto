@@ -1,0 +1,31 @@
+{% extends "CoyoteBaseBundle::layout.html.twig" %}
+
+{% block title %}Create User{% endblock %}
+
+{% block body -%}
+
+	<h1><span class="fa fa-users"></span> Create User</h1>
+
+
+<div class="panel panel-default">
+	<div class="panel-heading">Add User</a></div>
+	<div class="panel-body">
+		
+	{{ form_start(form) }}
+	
+		{{ form_errors(form) }}
+	
+        {{ form_row(form.username) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.roles) }}
+        {{ form_row(form.plainPassword.first) }}
+        {{ form_row(form.plainPassword.second) }}
+
+		<button class="btn btn-primary">Create</button>
+		
+		<a href="{{ path('coyote_user_list') }}">Cancel</a>
+	{{ form_end(form) }}
+	</div>
+</div>
+
+{% endblock %}

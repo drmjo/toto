@@ -1,0 +1,16 @@
+services:
+    coyote_user.form.type.add:
+        class: Coyote\BaseBundle\Form\Type\UserAddFormType
+        arguments: [%coyote_base.roles%]
+        tags:
+            - { name: form.type, alias: coyote_base_user_add }
+   
+    form.type.state:
+        class: Coyote\BaseBundle\Form\Type\StateType
+        tags:
+            - { name: form.type, alias: state }
+
+    coyote_base.twig_extension:
+        class: Coyote\BaseBundle\Twig\Extension\Extensions
+        tags:
+            - { name: twig.extension }

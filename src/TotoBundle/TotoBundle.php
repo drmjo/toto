@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace TotoBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class TotoBundle extends Bundle
 {
 }

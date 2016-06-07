@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}Welcome To Invites!{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+
+        {% block fonts %}
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,800' rel='stylesheet' type='text/css'>
+        {% endblock %}
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block layout %}{% endblock %}
+    
+        {#<script type="text/javascript" src="{{ asset('bundles/coyotebase/js/main.min.js') }}"></script>#}
+        <script type="application/javascript">
+            var $collectionHolder;
+
+            // Get the ul that holds the collection of tags
+            $collectionHolders = $('div.collection-wrapper');
+
+            $collectionHolders.each(function(index, collectionHolder){
+
+                $collectionHolder = $(collectionHolder);
+                // count the$ current form inputs we have (e.g. 2), use that as the new
+                // index when inserting a new item (e.g. 2)
+                $collectionHolder.data('index', $collectionHolder.find('ul.collection-items > li').length);
+
+                $collectionHolder.find('.add').on('click', function(e) {
+                    e.preventDefault();
+
+//        console.log('add clicked');
+                    addTagForm($($collectionHolders[index]));
+                });
+                $('.remove').click(function(e) {
+                    e.preventDefault();
+                    $(this).parent().remove();
+                    return false;
+                });
+            });
+
+            $('form').on('submit', function () {
+                $(this).find('button').button('loading');
+            });
+
+            function addTagForm($collectionHolder) {
+                // Get the data-prototype explained earlier
+                var prototype = $collectionHolder.data('prototype');
+
+                // get the new index
+                var index = $collectionHolder.data('index');
+
+                // Replace '__name__' in the prototype's HTML to
+                // instead be a number based on how many items we have
+                var newForm = prototype.replace(/__name__/g, index);
+
+                // increase the index with one for the next item
+                $collectionHolder.data('index', index + 1);
+
+                console.log('index' + index);
+
+                // Display the form in the page in an li, before the "Add a tag" link li
+                //var $newFormLi = $('<li></li>').append(newForm);
+                var $containerUL = $collectionHolder.find('ul.collection-items');
+                $containerUL.append(newForm);
+                $('.remove').click(function(e) {
+                    e.preventDefault();
+                    $(this).parent().remove();
+                    return false;
+                });
+
+//    console.log($containerUL);
+//    console.log(newForm);
+
+            }
+        </script>
+        {% block javascripts %}{% endblock %}
+
+    </body>
+</html>

@@ -1,0 +1,27 @@
+{% extends "CoyoteBaseBundle::layout.html.twig" %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body -%}
+
+	<h1><span class="fa fa-users"></span> Edit User</h1>
+
+
+<div class="panel panel-default">
+	<div class="panel-heading">Change User</a></div>
+	<div class="panel-body">
+		
+	{{ form_start(form) }}
+	
+		{{ form_errors(form) }}
+        {{ form_row(form.username) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.roles) }}
+
+		<button class="btn btn-primary">Save</button>
+		<a href="{{ path('coyote_user_list') }}">Cancel</a>
+	{{ form_end(form) }}
+	</div>
+</div>
+
+{% endblock %}

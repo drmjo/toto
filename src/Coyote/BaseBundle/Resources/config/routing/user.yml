@@ -1,0 +1,49 @@
+coyote_user_list:
+    path:     /
+    defaults: { _controller: CoyoteBaseBundle:User:list }
+    methods: [GET]
+
+coyote_user_new:
+    path:     /new
+    defaults: { _controller: CoyoteBaseBundle:User:new }
+    methods: [GET]
+
+coyote_user_create:
+    path:     /create
+    defaults: { _controller: CoyoteBaseBundle:User:create }
+    methods: [POST]
+
+coyote_user_remove_warning:
+    path:     /{id}/delete-warning
+    defaults: { _controller: CoyoteBaseBundle:User:removeWarning }
+    methods: [GET]
+
+coyote_user_remove:
+    path:     /{id}/delete
+    defaults: { _controller: CoyoteBaseBundle:User:remove }
+    methods: [DELETE]
+
+coyote_user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: CoyoteBaseBundle:User:edit }
+    methods: [GET|POST]
+
+coyote_user_show:
+    path:     /{id}/show
+    defaults: { _controller: CoyoteBaseBundle:User:show }
+    methods: [GET]
+
+coyote_user_reset_pass_as_super:
+    path:     /{id}/reset-password-as-super
+    defaults: { _controller: CoyoteBaseBundle:User:resetPasswordAsSuper }
+    methods: [GET|POST]
+
+coyote_user_ban:
+    path:     /{id}/ban
+    defaults: { _controller: CoyoteBaseBundle:User:ban }
+    methods: [PUT]
+
+# use overwrite the profile controller of the fos user bundle
+fos_user_profile_show:
+    path:     /profile
+    defaults: { _controller: CoyoteBaseBundle:User:profile }

@@ -1,0 +1,50 @@
+{% extends "CoyoteBaseBundle::layout.html.twig" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body -%}
+
+<h1><span class="fa fa-user"></span> {{ app.user.username }}</h1>
+
+<div class="row">
+	<div class="col-xs-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">General</a></div>
+			<div class="panel-body">
+				
+				<p><strong>Username: </strong> {{ app.user.username }}</p>
+				<p><strong>Email: </strong> {{ app.user.email }}</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">Change Password</a></div>
+			<div class="panel-body">
+				
+				<form action="{{ path('fos_user_profile_show') }}" method="POST">
+					
+					<div class="form-group">
+						{{ form_label(form.current_password) }}
+						{{ form_widget(form.current_password, {attr: {class: 'form-control'}}) }}
+						{{ form_errors(form.current_password) }}
+					</div>
+					<div class="form-group">
+						{{ form_label(form.new.first) }}
+						{{ form_widget(form.new.first, {attr: {class: 'form-control'}}) }}
+						{{ form_errors(form.new.first) }}
+					</div>
+					<div class="form-group">
+						{{ form_label(form.new.second) }}
+						{{ form_widget(form.new.second, {attr: {class: 'form-control'}}) }}
+						{{ form_errors(form.new.second) }}
+					</div>
+					{{ form_widget(form) }}
+					<button class="btn btn-primary">Change Password</button>					
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,5 @@
+<ul class="nav nav-sidebar">
+    {% if is_granted("ROLE_SUPER_ADMIN") %}
+    <li><a href="{{ url('coyote_user_list') }}"><span class="fa fa-users"></span> Users</a></li>
+    {% endif %}
+</ul>
