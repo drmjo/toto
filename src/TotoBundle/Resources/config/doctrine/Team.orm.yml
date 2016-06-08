@@ -1,0 +1,34 @@
+TotoBundle\Entity\Team:
+    type: entity
+    table: toto_team
+    repositoryClass: TotoBundle\Repository\TeamRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToMany:
+        homeGames:
+            targetEntity: Game
+            mappedBy: homeTeam
+        awayGames:
+            targetEntity: Game
+            mappedBy: awayTeam
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        createdAt:
+            type: datetime
+            column: created_at
+        updatedAt:
+            type: datetime
+            column: updated_at
+    lifecycleCallbacks:
+        prePersist:
+            - setCreatedAt
+            - setUpdatedAt
+        preUpdate:
+            - setUpdatedAt
