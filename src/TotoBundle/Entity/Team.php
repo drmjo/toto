@@ -193,4 +193,33 @@ class Team
     {
         return $this->awayGames;
     }
+    /**
+     * @var \TotoBundle\Entity\Group
+     */
+    private $group;
+
+
+    /**
+     * Set group
+     *
+     * @param \TotoBundle\Entity\Group $group
+     *
+     * @return Team
+     */
+    public function setGroup(\TotoBundle\Entity\Group $group = null)
+    {
+        $this->group = $group;
+
+        return $this;
+    }
+
+    /**
+     * Get group
+     *
+     * @return \TotoBundle\Entity\Group
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
 }

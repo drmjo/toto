@@ -8,6 +8,13 @@ TotoBundle\Entity\Team:
             id: true
             generator:
                 strategy: AUTO
+    manyToOne:
+        group:
+            targetEntity: Group
+            inversedBy: teams
+            joinColumn:
+                name: group_id
+                referencedColumnName: id
     oneToMany:
         homeGames:
             targetEntity: Game

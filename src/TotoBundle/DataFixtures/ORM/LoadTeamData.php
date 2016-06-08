@@ -57,12 +57,13 @@ class LoadTeamData extends AbstractFixture implements OrderedFixtureInterface, C
             'Wales'
         ];
 
-        foreach($teams as $teamName)
+        foreach($teams as $key => $teamName)
         {
             $team = new Team();
             $team->setName($teamName);
             $manager->persist($team);
             $manager->flush();
+            $this->addReference('team_' . ($key+1) , $team);
         }
     }
 

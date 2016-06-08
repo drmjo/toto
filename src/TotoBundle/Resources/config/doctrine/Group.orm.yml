@@ -1,27 +1,25 @@
-TotoBundle\Entity\Game:
+TotoBundle\Entity\Group:
     type: entity
-    table: toto_game
-    repositoryClass: TotoBundle\Repository\GameRepository
+    table: toto_group
+    repositoryClass: TotoBundle\Repository\GroupRepository
     id:
         id:
             type: integer
             id: true
             generator:
                 strategy: AUTO
-    manyToOne:
-        homeTeam:
+    oneToMany:
+        teams:
             targetEntity: Team
-            inversedBy: homeGames
-            joinColumn:
-                name: home_team_id
-                referencedColumnName: id
-        awayTeam:
-            targetEntity: Team
-            inversedBy: homeGames
-            joinColumn:
-                name: away_team_id
-                referencedColumnName: id
+            mappedBy: group
+            cascade:
+                - persist
+                - remove
     fields:
+        name:
+            type: string
+            length: 255
+            unique: true
         createdAt:
             type: datetime
             column: created_at
