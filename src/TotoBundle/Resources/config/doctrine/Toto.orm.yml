@@ -13,6 +13,8 @@ TotoBundle\Entity\Toto:
             targetEntity: TotoEntry
             mappedBy: toto
     fields:
+        player:
+            type: string
         createdAt:
             type: datetime
             column: created_at

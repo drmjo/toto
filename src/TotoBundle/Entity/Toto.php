@@ -28,6 +28,11 @@ class Toto
     private $entries;
 
     /**
+     * @var string
+     */
+    private $player;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -121,5 +126,29 @@ class Toto
     public function getEntries()
     {
         return $this->entries;
+    }
+
+    /**
+     * Set player
+     *
+     * @param string $player
+     *
+     * @return Toto
+     */
+    public function setPlayer($player)
+    {
+        $this->player = $player;
+
+        return $this;
+    }
+
+    /**
+     * Get player
+     *
+     * @return string
+     */
+    public function getPlayer()
+    {
+        return $this->player;
     }
 }
