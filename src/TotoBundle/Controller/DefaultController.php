@@ -8,6 +8,11 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('TotoBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $games = $em->getRepository('TotoBundle\Entity\Game')->findAll();
+
+        return $this->render('TotoBundle:Default:index.html.twig', [
+            'games' => $games
+        ]);
     }
 }

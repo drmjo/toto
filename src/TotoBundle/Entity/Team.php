@@ -32,6 +32,11 @@ class Team
      */
     private $group;
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     /**
      * Get id
      *
