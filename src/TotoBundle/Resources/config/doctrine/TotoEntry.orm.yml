@@ -1,7 +1,7 @@
-TotoBundle\Entity\Game:
+TotoBundle\Entity\TotoEntry:
     type: entity
-    table: toto_game
-    repositoryClass: TotoBundle\Repository\GameRepository
+    table: toto_toto_entry
+    repositoryClass: TotoBundle\Repository\TotoEntryRepository
     id:
         id:
             type: integer
@@ -9,16 +9,11 @@ TotoBundle\Entity\Game:
             generator:
                 strategy: AUTO
     manyToOne:
-        homeTeam:
-            targetEntity: Team
-            joinColumn:
-                name: home_team_id
-                referencedColumnName: id
-        awayTeam:
-            targetEntity: Team
-            joinColumn:
-                name: away_team_id
-                referencedColumnName: id
+        toto:
+            targetEntity: Toto
+            inversedBy: entries
+        game:
+            targetEntity: Game
     fields:
         homeScore:
             type: integer

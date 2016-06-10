@@ -1,3 +1,49 @@
-{% for game in games %}
-    {{ game.homeTeam }} : {{ game.awayTeam }} <br />
-{% endfor %}
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 500px;
+        }
+        td {
+            border: 1px solid #000000;
+        }
+        td:nth-child(1) {
+            width: 10%;
+        }
+        td:nth-child(2) {
+            width: 40%;
+        }
+        td:nth-child(3) {
+            width: 40%;
+        }
+        td:nth-child(4) {
+            width: 10%;
+        }
+
+    </style>
+    </head>
+    <body>
+
+    <table>
+        {% for game in games %}
+        <tr>
+            <td>{{ game.homeScore }}</td>
+            <td>{{ game.homeTeam }}</td>
+            <td>{{ game.awayTeam }}</td>
+            <td>{{ game.awayScore }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    </body>
+</html>

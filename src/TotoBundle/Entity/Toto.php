@@ -3,19 +3,14 @@
 namespace TotoBundle\Entity;
 
 /**
- * Group
+ * Toto
  */
-class Group
+class Toto
 {
     /**
      * @var integer
      */
     private $id;
-
-    /**
-     * @var string
-     */
-    private $name;
 
     /**
      * @var \DateTime
@@ -30,14 +25,14 @@ class Group
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $teams;
+    private $entries;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->teams = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->entries = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -51,33 +46,9 @@ class Group
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Group
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
      * Set createdAt
      *
-     * @return Group
+     * @return Toto
      */
     public function setCreatedAt()
     {
@@ -99,7 +70,7 @@ class Group
     /**
      * Set updatedAt
      *
-     * @return Group
+     * @return Toto
      */
     public function setUpdatedAt()
     {
@@ -119,37 +90,36 @@ class Group
     }
 
     /**
-     * Add team
+     * Add entry
      *
-     * @param \TotoBundle\Entity\Team $team
+     * @param \TotoBundle\Entity\TotoEntry $entry
      *
-     * @return Group
+     * @return Toto
      */
-    public function addTeam(\TotoBundle\Entity\Team $team)
+    public function addEntry(\TotoBundle\Entity\TotoEntry $entry)
     {
-        $team->setGroup($this);
-        $this->teams[] = $team;
+        $this->entries[] = $entry;
 
         return $this;
     }
 
     /**
-     * Remove team
+     * Remove entry
      *
-     * @param \TotoBundle\Entity\Team $team
+     * @param \TotoBundle\Entity\TotoEntry $entry
      */
-    public function removeTeam(\TotoBundle\Entity\Team $team)
+    public function removeEntry(\TotoBundle\Entity\TotoEntry $entry)
     {
-        $this->teams->removeElement($team);
+        $this->entries->removeElement($entry);
     }
 
     /**
-     * Get teams
+     * Get entries
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getTeams()
+    public function getEntries()
     {
-        return $this->teams;
+        return $this->entries;
     }
 }

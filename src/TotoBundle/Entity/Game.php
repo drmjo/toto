@@ -32,6 +32,15 @@ class Game
      */
     private $awayTeam;
 
+    /**
+     * @var integer
+     */
+    private $homeScore;
+
+    /**
+     * @var integer
+     */
+    private $awayScore;
 
     /**
      * Get id
@@ -133,5 +142,53 @@ class Game
     public function getAwayTeam()
     {
         return $this->awayTeam;
+    }
+
+    /**
+     * Set homeScore
+     *
+     * @param integer $homeScore
+     *
+     * @return Game
+     */
+    public function setHomeScore($homeScore)
+    {
+        $this->homeScore = $homeScore;
+
+        return $this;
+    }
+
+    /**
+     * Get homeScore
+     *
+     * @return integer
+     */
+    public function getHomeScore()
+    {
+        return $this->homeScore;
+    }
+
+    /**
+     * Set awayScore
+     *
+     * @param integer $awayScore
+     *
+     * @return Game
+     */
+    public function setAwayScore($awayScore)
+    {
+        $this->awayScore = $awayScore;
+
+        return $this;
+    }
+
+    /**
+     * Get awayScore
+     *
+     * @return integer
+     */
+    public function getAwayScore()
+    {
+        return $this->awayScore;
     }
 }

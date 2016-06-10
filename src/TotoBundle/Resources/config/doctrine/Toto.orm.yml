@@ -1,0 +1,27 @@
+TotoBundle\Entity\Toto:
+    type: entity
+    table: toto_toto
+    repositoryClass: TotoBundle\Repository\TotoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToMany:
+        entries:
+            targetEntity: TotoEntry
+            mappedBy: toto
+    fields:
+        createdAt:
+            type: datetime
+            column: created_at
+        updatedAt:
+            type: datetime
+            column: updated_at
+    lifecycleCallbacks:
+        prePersist:
+            - setCreatedAt
+            - setUpdatedAt
+        preUpdate:
+            - setUpdatedAt
