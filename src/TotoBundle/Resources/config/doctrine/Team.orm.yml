@@ -15,13 +15,6 @@ TotoBundle\Entity\Team:
             joinColumn:
                 name: group_id
                 referencedColumnName: id
-    oneToMany:
-        homeGames:
-            targetEntity: Game
-            mappedBy: homeTeam
-        awayGames:
-            targetEntity: Game
-            mappedBy: awayTeam
     fields:
         name:
             type: string

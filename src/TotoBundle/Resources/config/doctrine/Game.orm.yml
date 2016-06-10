@@ -11,13 +11,11 @@ TotoBundle\Entity\Game:
     manyToOne:
         homeTeam:
             targetEntity: Team
-            inversedBy: homeGames
             joinColumn:
                 name: home_team_id
                 referencedColumnName: id
         awayTeam:
             targetEntity: Team
-            inversedBy: homeGames
             joinColumn:
                 name: away_team_id
                 referencedColumnName: id
