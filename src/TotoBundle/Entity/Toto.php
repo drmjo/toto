@@ -103,6 +103,7 @@ class Toto
      */
     public function addEntry(\TotoBundle\Entity\TotoEntry $entry)
     {
+        $entry->setToto($this);
         $this->entries[] = $entry;
 
         return $this;
@@ -150,5 +151,34 @@ class Toto
     public function getPlayer()
     {
         return $this->player;
+    }
+    /**
+     * @var string
+     */
+    private $token;
+
+
+    /**
+     * Set token
+     *
+     * @param string $token
+     *
+     * @return Toto
+     */
+    public function setToken($token)
+    {
+        $this->token = $token;
+
+        return $this;
+    }
+
+    /**
+     * Get token
+     *
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->token;
     }
 }

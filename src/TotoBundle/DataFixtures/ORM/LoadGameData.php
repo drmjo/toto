@@ -18,6 +18,8 @@ class LoadGameData extends AbstractFixture implements OrderedFixtureInterface, C
      */
     private $container;
 
+    private $counter = 1;
+
     /**
      * {@inheritDoc}
      */
@@ -76,7 +78,7 @@ class LoadGameData extends AbstractFixture implements OrderedFixtureInterface, C
         $this->setupGame('team_3', 'team_11', $manager);
 
         $this->setupGame('team_2', 'team_9', $manager);
-        $this->setupGame('team_13', 'team_10', $manager);
+        $this->setupGame('team_14', 'team_10', $manager);
 
         $this->setupGame('team_17', 'team_18', $manager);
         $this->setupGame('team_16', 'team_21', $manager);
@@ -116,6 +118,8 @@ class LoadGameData extends AbstractFixture implements OrderedFixtureInterface, C
         $game = new Game();
         $game->setHomeTeam($this->getReference($home));
         $game->setAwayTeam($this->getReference($away));
+        $this->addReference('game_' . $this->counter, $game);
+        $this->counter++;
         $manager->persist($game);
         $manager->flush();
     }

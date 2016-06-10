@@ -12,7 +12,13 @@ TotoBundle\Entity\Toto:
         entries:
             targetEntity: TotoEntry
             mappedBy: toto
+            cascade:
+                - persist
+                - remove
     fields:
+        token:
+            type: string
+            length: 255
         player:
             type: string
         createdAt:

@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ toto.player }}'s Toto{% endblock %}
+
+{% block body %}
+    <h1>{{ toto.player }}</h1>
+
+    <table>
+        {% for entry in toto.entries %}
+            <tr>
+                <td>{{ entry.homeScore }}</td>
+                <td>{{ entry.game.homeTeam }}</td>
+                <td>{{ entry.game.awayTeam }}</td>
+                <td>{{ entry.awayScore }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}

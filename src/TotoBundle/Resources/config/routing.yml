@@ -1,3 +1,8 @@
 toto_homepage:
     path:     /
     defaults: { _controller: TotoBundle:Default:index }
+
+toto_show:
+    path: toto/{token}
+    defaults:
+        _controller: TotoBundle:Toto:show
