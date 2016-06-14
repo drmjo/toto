@@ -1,0 +1,24 @@
+admin_game_index:
+    path:     /
+    defaults: { _controller: "TotoBundle:Game:index" }
+    methods:  GET
+
+admin_game_show:
+    path:     /{id}/show
+    defaults: { _controller: "TotoBundle:Game:show" }
+    methods:  GET
+
+admin_game_new:
+    path:     /new
+    defaults: { _controller: "TotoBundle:Game:new" }
+    methods:  [GET, POST]
+
+admin_game_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TotoBundle:Game:edit" }
+    methods:  [GET, POST]
+
+admin_game_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TotoBundle:Game:delete" }
+    methods:  DELETE

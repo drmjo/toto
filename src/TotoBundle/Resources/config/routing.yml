@@ -2,6 +2,10 @@ toto_admin_toto:
     resource: "@TotoBundle/Resources/config/routing/toto.yml"
     prefix:   /admin/toto
 
+toto_admin_game:
+        resource: "@TotoBundle/Resources/config/routing/game.yml"
+        prefix:   /admin/game
+
 toto_homepage:
     path:     /
     defaults: { _controller: TotoBundle:Default:index }
