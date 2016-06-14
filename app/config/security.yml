@@ -35,3 +35,6 @@ security:
             switch_user:
               role: ROLE_SUPER_ADMIN
               parameter: _super_su
+    access_control:
+        - path: ^/admin
+          role: ROLE_SUPER_ADMIN
