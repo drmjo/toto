@@ -1,0 +1,24 @@
+admin_toto_index:
+    path:     /
+    defaults: { _controller: "TotoBundle:Toto:index" }
+    methods:  GET
+
+admin_toto_show:
+    path:     /{id}/show
+    defaults: { _controller: "TotoBundle:Toto:show" }
+    methods:  GET
+
+admin_toto_new:
+    path:     /new
+    defaults: { _controller: "TotoBundle:Toto:new" }
+    methods:  [GET, POST]
+
+admin_toto_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TotoBundle:Toto:edit" }
+    methods:  [GET, POST]
+
+admin_toto_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TotoBundle:Toto:delete" }
+    methods:  DELETE

@@ -1,3 +1,7 @@
+toto_admin_toto:
+    resource: "@TotoBundle/Resources/config/routing/toto.yml"
+    prefix:   /admin/toto
+
 toto_homepage:
     path:     /
     defaults: { _controller: TotoBundle:Default:index }
@@ -5,4 +9,4 @@ toto_homepage:
 toto_show:
     path: toto/{token}
     defaults:
-        _controller: TotoBundle:Toto:show
+        _controller: TotoBundle:PublicToto:show

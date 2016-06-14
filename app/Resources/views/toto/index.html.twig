@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Toto list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Token</th>
+                <th>Player</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for toto in totos %}
+            <tr>
+                <td><a href="{{ path('admin_toto_show', { 'id': toto.id }) }}">{{ toto.id }}</a></td>
+                <td>{{ toto.token }}</td>
+                <td>{{ toto.player }}</td>
+                <td>{% if toto.createdAt %}{{ toto.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if toto.updatedAt %}{{ toto.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_toto_show', { 'id': toto.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_toto_edit', { 'id': toto.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_toto_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
