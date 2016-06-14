@@ -30,6 +30,9 @@
                         <li>
                             <a href="{{ path('admin_toto_edit', { 'id': toto.id }) }}">edit</a>
                         </li>
+                        <li>
+                            <a href="{{ path('toto_show', { 'token': toto.token }) }}">public</a>
+                        </li>
                     </ul>
                 </td>
             </tr>

@@ -11,7 +11,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $games = $em->getRepository('TotoBundle\Entity\Game')->findAll();
 
-        return $this->render('TotoBundle:Default:index.html.twig', [
+        return $this->render('default\index.html.twig', [
             'games' => $games
         ]);
     }

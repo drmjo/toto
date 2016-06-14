@@ -2,12 +2,11 @@
 
 namespace TotoBundle\Form;
 
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class TotoType extends AbstractType
+class TotoEntryType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -16,16 +15,10 @@ class TotoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('token', TextType::class, [
+            ->add('homeScore')
+            ->add('awayScore')
+            ->add('game', null, [
                 'disabled' => true,
-            ])
-            ->add('player', TextType::class, [
-                'disabled' => true
-            ])
-            ->add('entries', 'collection', [
-                'type' => new TotoEntryType(),
-                'allow_add' => false,
-                'allow_delete' => false,
             ])
         ;
     }
@@ -36,7 +29,7 @@ class TotoType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'TotoBundle\Entity\Toto'
+            'data_class' => 'TotoBundle\Entity\TotoEntry'
         ));
     }
 }

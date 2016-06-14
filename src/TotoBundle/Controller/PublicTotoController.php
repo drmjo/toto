@@ -15,7 +15,7 @@ class PublicTotoController extends Controller
             throw $this->createNotFoundException('Toto Not Found');
         }
 
-        return $this->render('TotoBundle:Toto:show.html.twig', array(
+        return $this->render('toto\public.html.twig', array(
             'toto' => $toto,
         ));
     }

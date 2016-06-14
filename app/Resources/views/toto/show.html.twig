@@ -28,6 +28,17 @@
         </tbody>
     </table>
 
+    <table>
+        {% for entry in toto.entries %}
+            <tr>
+                <td>{{ entry.homeScore }}</td>
+                <td>{{ entry.game.homeTeam }}</td>
+                <td>{{ entry.game.awayTeam }}</td>
+                <td>{{ entry.awayScore }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
     <ul>
         <li>
             <a href="{{ path('admin_toto_index') }}">Back to the list</a>

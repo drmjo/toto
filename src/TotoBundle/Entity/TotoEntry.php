@@ -42,6 +42,10 @@ class TotoEntry
      */
     private $game;
 
+    public function __toString()
+    {
+        return $this->getGame()->__toString();
+    }
 
     /**
      * Get id

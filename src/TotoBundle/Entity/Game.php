@@ -42,6 +42,10 @@ class Game
      */
     private $awayScore;
 
+    public function __toString()
+    {
+        return sprintf('%s vs %s', $this->getHomeTeam(), $this->getAwayTeam());
+    }
     /**
      * Get id
      *
