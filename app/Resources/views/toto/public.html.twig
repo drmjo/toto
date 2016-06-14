@@ -4,17 +4,8 @@
 
 {% block body %}
     <h1>{{ toto.player }}</h1>
-
-    <table>
-        {% for entry in toto.entries %}
-            <tr>
-                <td>{{ entry.homeScore }}</td>
-                <td>{{ entry.game.homeTeam }}</td>
-                <td>{{ entry.game.awayTeam }}</td>
-                <td>{{ entry.awayScore }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-
+    <h3>Points: {{ total }}</h3>
+    {% set table_entries = toto.entries %}
+    {% include 'toto/blocks/toto_table.html.twig' %}
 
 {% endblock %}

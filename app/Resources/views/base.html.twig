@@ -17,10 +17,13 @@
                 width: 10%;
             }
             td:nth-child(2) {
-                width: 40%;
+                width: 35%;
             }
             td:nth-child(3) {
-                width: 40%;
+                width: 35%;
+            }
+            td:nth-child(4) {
+                width: 10%;
             }
             td:nth-child(4) {
                 width: 10%;
@@ -29,7 +32,9 @@
         </style>
     </head>
     <body>
-        {% block body %}{% endblock %}
+    {% include('CoyoteBaseBundle::left_nav.html.twig') %}
+
+    {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

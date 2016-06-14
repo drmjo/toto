@@ -1,0 +1,11 @@
+<table>
+    {% for entry in table_entries %}
+        <tr>
+            <td align="right">{{ entry.homeScore }}</td>
+            <td align="right">{{ entry.game.homeTeam }}</td>
+            <td align="left">{{ entry.game.awayTeam }}</td>
+            <td align="left">{{ entry.awayScore }}</td>
+            <td align="center">{{ entry.points is not null ? '+' ~ entry.points : '-' }}</td>
+        </tr>
+    {% endfor %}
+</table>

@@ -28,16 +28,8 @@
         </tbody>
     </table>
 
-    <table>
-        {% for entry in toto.entries %}
-            <tr>
-                <td>{{ entry.homeScore }}</td>
-                <td>{{ entry.game.homeTeam }}</td>
-                <td>{{ entry.game.awayTeam }}</td>
-                <td>{{ entry.awayScore }}</td>
-            </tr>
-        {% endfor %}
-    </table>
+    {% set table_entries = toto.entries %}
+    {% include 'toto/blocks/toto_table.html.twig' %}
 
     <ul>
         <li>

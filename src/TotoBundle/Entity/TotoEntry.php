@@ -42,6 +42,8 @@ class TotoEntry
      */
     private $game;
 
+    private $points;
+
     public function __toString()
     {
         return $this->getGame()->__toString();
@@ -196,5 +198,25 @@ class TotoEntry
     {
         return $this->game;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPoints()
+    {
+        return $this->points;
+    }
+
+    /**
+     * @param mixed $points
+     * @return \TotoBundle\Entity\TotoEntry
+     */
+    public function setPoints($points)
+    {
+        $this->points = $points;
+
+        return $this;
+    }
+
 }
 
