@@ -49,22 +49,25 @@ class PublicTotoController extends Controller
             return;
         }
 
-
+        $away_score_actual = (int) $away_score_actual;
+        $home_score_actual = (int) $home_score_actual;
+        $away_score_guessed = (int) $away_score_guessed;
+        $home_score_guessed = (int) $home_score_guessed;
 
         switch (true)
         {
-            case (int)$away_score_actual === (int)$away_score_guessed
-                && (int)$home_score_actual === (int)$home_score_guessed:
+            case $away_score_actual === $away_score_guessed
+                && $home_score_actual === $home_score_guessed:
                 $entry->setPoints(5);
                 break;
-            case abs((int)$away_score_guessed - (int)$home_score_guessed)
-                === abs((int)$away_score_actual - (int)$home_score_actual):
+            case $away_score_guessed - $home_score_guessed
+                === $away_score_actual - $home_score_actual:
                 $entry->setPoints(3);
                 break;
-            case ( (int)$home_score_actual > (int)$away_score_actual
-                    && (int)$home_score_guessed > (int)$away_score_guessed )
-                 || ( (int)$home_score_actual < (int)$away_score_actual
-                    && (int)$home_score_guessed < (int)$away_score_guessed ):
+            case ( $home_score_actual > $away_score_actual
+                    && $home_score_guessed > $away_score_guessed )
+                 || ( $home_score_actual < $away_score_actual
+                    && $home_score_guessed < $away_score_guessed ):
                 $entry->setPoints(1);
                 break;
             default:
