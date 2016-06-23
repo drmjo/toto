@@ -15,4 +15,4 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     # change this for ur own use
-    secret:            %session.secret%
+    secret:            {{secret}}
