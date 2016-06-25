@@ -63,54 +63,16 @@ class LoadGameData extends AbstractFixture implements OrderedFixtureInterface, C
 //| 24 | Wales               | 2016-06-07 23:09:52 | 2016-06-07 23:09:52 |
 //+----+---------------------+---------------------+---------------------+
 
-        $this->setupGame('team_7', 'team_16', $manager);
+        $this->setupGame('team_21', 'team_13', $manager);
+        $this->setupGame('team_24', 'team_12', $manager);
+        $this->setupGame('team_4', 'team_14', $manager);
 
-        $this->setupGame('team_1', 'team_21', $manager);
-        $this->setupGame('team_24', 'team_18', $manager);
-        $this->setupGame('team_6', 'team_17', $manager);
+        $this->setupGame('team_7', 'team_15', $manager);
+        $this->setupGame('team_8', 'team_18', $manager);
+        $this->setupGame('team_9', 'team_3', $manager);
 
-        $this->setupGame('team_22', 'team_4', $manager);
-        $this->setupGame('team_13', 'team_12', $manager);
-        $this->setupGame('team_8', 'team_23', $manager);
-
-        $this->setupGame('team_19', 'team_5', $manager);
-        $this->setupGame('team_15', 'team_20', $manager);
-        $this->setupGame('team_3', 'team_11', $manager);
-
-        $this->setupGame('team_2', 'team_9', $manager);
-        $this->setupGame('team_14', 'team_10', $manager);
-
-        $this->setupGame('team_17', 'team_18', $manager);
-        $this->setupGame('team_16', 'team_21', $manager);
-        $this->setupGame('team_7', 'team_1', $manager);
-
-        $this->setupGame('team_6', 'team_24', $manager);
-        $this->setupGame('team_23', 'team_12', $manager);
-        $this->setupGame('team_8', 'team_13', $manager);
-
-        $this->setupGame('team_11', 'team_20', $manager);
-        $this->setupGame('team_5', 'team_4', $manager);
-        $this->setupGame('team_19', 'team_22', $manager);
-
-        $this->setupGame('team_3', 'team_15', $manager);
-        $this->setupGame('team_10', 'team_9', $manager);
-        $this->setupGame('team_14', 'team_2', $manager);
-
-        $this->setupGame('team_21', 'team_7', $manager);
-        $this->setupGame('team_16', 'team_1', $manager);
-
-        $this->setupGame('team_17', 'team_24', $manager);
-        $this->setupGame('team_18', 'team_6', $manager);
-
-        $this->setupGame('team_23', 'team_13', $manager);
-        $this->setupGame('team_12', 'team_8', $manager);
-        $this->setupGame('team_5', 'team_22', $manager);
-        $this->setupGame('team_4', 'team_19', $manager);
-
-        $this->setupGame('team_10', 'team_2', $manager);
-        $this->setupGame('team_9', 'team_14', $manager);
-        $this->setupGame('team_11', 'team_15', $manager);
-        $this->setupGame('team_20', 'team_3', $manager);
+        $this->setupGame('team_11', 'team_19', $manager);
+        $this->setupGame('team_6', 'team_10', $manager);
     }
 
     private function setupGame($home, $away, $manager)
