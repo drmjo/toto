@@ -66,7 +66,7 @@ class LoadTotoData extends AbstractFixture implements OrderedFixtureInterface, C
 
     public function addEntries(Toto $toto)
     {
-        for ($i = 1; $i <= 36; $i++) {
+        for ($i = 1; $i <= 8; $i++) {
             $game = $this->getReference('game_' . $i);
             $totoEntry = new TotoEntry();
             $totoEntry->setGame($game);
